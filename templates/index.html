@@ -1,0 +1,52 @@
+{% extends "mbd.html" %}
+{% block title %}Covid-19 Ratchasima{% endblock %}
+{% block content %}
+
+<section class="contact-section ">
+    <div class="container ">
+        <div class="row"> 
+            <div class="col-xl-3"> 
+            </div>         
+            <div class="col-xl-6">
+                <!-- <div class="contact-form-wrapper">     -->
+                    <div class="card text-center" style="width: 35rem;height:25rem;margin-top: 3rem;" >                                         
+                        <div class="card-body text-center shadow-lg" >  
+                            <h5 class="card-title" style="margin-top: 2rem;">ค้นหาผลการตรวจเชื้อ COVID-19</h5> 
+                            <form action="{{url_for('getOTP')}}" method="POST" class="contact-form">  
+
+                                <div class="row">
+                                    <div class="col-md-2">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="input-group" style="margin-top: 2rem;">
+                                            <span class="input-group-text border-0" id="search-addon"><i class="far fa-address-card"></i></span>
+                                            <input type="tel" class="form-control rounded" name="cid" placeholder="เลขบัตรประชาชน" aria-label="เลขบัตรประชาชน" maxlength="13" required/>
+                                        </div>
+                                        <div class="input-group" style="margin-top: 2rem;">
+                                            <span class="input-group-text border-0" id="search-addon"><i class="fas fa-phone-square"></i></span>
+                                            <input type="tel" class="form-control rounded" name="number" placeholder="หมายเลขโทรศัพท์" aria-label="หมายเลขโทรศัพท์" required/>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                    </div>
+                                </div>
+                                    <div style="margin-top: 2rem;">                      
+                                        <button type="submit" class="btn btn-success btn-rounded" style="font-size: 15px;"><i class="fas fa-search mr-2"></i>&nbsp;&nbsp;&nbsp;&nbsp;ค้นหา&nbsp;&nbsp;</button>   
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div> 
+                <!-- </div> -->
+            </div>
+            <div class="col-xl-3">
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+{% endblock content %}

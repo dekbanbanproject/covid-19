@@ -1,0 +1,70 @@
+{% extends "backend.html" %}
+{% block title %}Covid-19 Dashboard{% endblock %}
+{% block content %}
+
+    <!-- ========================= contact-section start ========================= -->
+    <section class="contact-section pt-130 pb-75">
+        <div class="container">
+            <div class="row"> 
+                <div class="col-xl-12">
+                    <div class="contact-form-wrapper">
+                        <table class="table table-bordered border-primary">
+                            <thead align="center">
+                                <tr>
+                                <th scope="col">วันที่ตรวจ</th>
+                                <th scope="col">HN</th>
+                                <th scope="col">เลขบัตรประชาชน</th>
+                                <th scope="col">ชื่อ</th>
+                                <th scope="col">นามสกุล</th>
+                                <th scope="col">อายุ</th>
+                                <th scope="col">เพศ</th>
+                                <th scope="col">ผล RT_PCR</th>
+                                <th scope="col">ผล Rapid</th>
+                                <th scope="col">ใบรับรองแพทย์</th>
+                                <th scope="col">พิมพ์ผล</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                <th scope="row">14 เมษายน 2564</th>
+                                <td>1231231</td>
+                                <td>1956231564231</td>
+                                <td>สมชายชาติ</td>
+                                <td>นาน้อย</td>
+                                <td>68</td>
+                                <td>ชาย</td>
+                                <td>@mdo</td>
+                                <td>@mdo</td>
+                                <td align="center"><a href="{{url('covid19_pdf')}}" target="_blank"><i class="fas fa-print fa-2x text-primary"></i></a></td>
+                                <td align="center"><a href="{{url('certificate_pdf')}}" target="_blank"><i class="fas fa-print fa-2x text-warning"></i></a></td>
+                                </tr>
+                                <tr>
+                                <th scope="row">14 เมษายน 2564</th>
+                                <td>1231231</td>
+                                <td>1956231564231</td>
+                                <td>สมชายชาติ</td>
+                                <td>นาน้อย</td>
+                                <td>68</td>
+                                <td>ชาย</td>
+                                <td>@fat</td>
+                                <td>@fat</td>
+                                <td align="center"><a href="{{url('covid19_pdf')}}" target="_blank"><i class="fas fa-print fa-2x text-info"></i></a></td>
+                                <td align="center"><a href="{{url('certificate_pdf')}}" target="_blank"><i class="fas fa-print fa-2x text-danger"></i></a></td>
+                                </tr>                           
+                            </tbody>
+                        </table>
+                        <br>
+                        <br>
+                        <br>
+                        <label for="" style="color:red">***** หมายเหตุ : ผลตรวจออกภายใน 24-48 ชั่วโมง หากไม่พบข้อมูลกรุณาตรวจสอบใหม่อิกครั้ง</label>                    
+                    </div>
+                </div>           
+            </div>
+        </div>
+    </section>
+    <!-- ========================= contact-section end ========================= -->
+
+
+
+
+{% endblock %}

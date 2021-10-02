@@ -1,0 +1,58 @@
+{% extends "backend_data.html" %}
+{% block title %}Covid-19 Ratchasima{% endblock %}
+{% block content %}
+
+   
+    <section class="contact-section" >                                        
+                <div class="card-body text-center shadow-lg" style="margin-top: 2rem;width: 100%;" >   
+                    <h5 class="card-title" style="margin-top: 2rem;">ผลการตรวจเชื้อ COVID-19</h5> <br>
+                    <div class="table-responsive">
+                            <table id="recent-orders-doctors" class="table table-hover table-xl mb-0" style="width: 100%;background-color: white;" >
+                                <thead align="center">
+                                    <tr>
+                                    <th class="border-top-0" style='font-size:16px'>วันที่ตรวจ</th>
+                                    <th class="border-top-0" style='font-size:16px'>ReferNo</th>
+                                    <th class="border-top-0" style='font-size:16px'>เลขบัตรประชาชน</th>
+                                    <th class="border-top-0" style='font-size:16px'>HN</th>
+                                    <th class="border-top-0" style='font-size:16px'>ชื่อ-นามสกุล</th>
+                                    <th class="border-top-0" style='font-size:16px'>อายุ</th>
+                                    <th class="border-top-0" style='font-size:16px'>เพศ</th>
+                                    <th class="border-top-0" style='font-size:16px'>พิมพ์ผล</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for data in person %}
+                                    <tr class="pull-up" align="left">                              
+                                        <td class="text-truncate" style='font-size:15px'>{{data.RequestDate.strftime("%x")}}</td>
+                                        <td class="text-truncate" style='font-size:15px'>{{data.ReferNo}}</td>
+                                        <td class="text-truncate" style='font-size:15px'>{{data.CardID}}</td>
+                                        <td class="text-truncate" style='font-size:15px'>{{data.Hn}}</td>
+                                        <td class="text-truncate" style='font-size:15px'>{{data.FName}} {{data.LName}}</td>                                   
+                                        <td class="text-truncate" style='font-size:15px'>{{data.AgeStr}}</td>
+
+                                        {% if data.Sex == 'M' %}
+                                        <td class="text-truncate" style='font-size:15px'>ชาย</td>
+                                        {% else %}
+                                        <td class="text-truncate" style='font-size:15px'>หญิง</td>
+                                        {% endif %}
+
+                                        <td class="text-truncate" align="center"><a href="" class="btn btn-success btn-sm px-3" target="_blank"><i class="fas fa-print fa-2x text-white"></i></a></td>
+                                    </tr>   
+                                    {% endfor %}                                                 
+                                </tbody>
+                            </table>
+                          
+                              
+
+                            <br>
+                            <br>
+                     
+                            <label for="" style="color:red" >***** หมายเหตุ : ผลตรวจออกภายใน 24-48 ชั่วโมง หากไม่พบข้อมูลกรุณาตรวจสอบใหม่อิกครั้ง</label>                    
+                        </div>
+                  
+                </div>           
+         
+    </section>
+
+
+{% endblock %}
